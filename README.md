@@ -1,3 +1,3 @@
-# TypeScript Starter
+# Virtual Dom Utilities
 
-Slim Boilerplate for TypeScript based projects.
+Simple utility functions that are used in many virtual dom libraries.
