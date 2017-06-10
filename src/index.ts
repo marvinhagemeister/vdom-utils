@@ -33,7 +33,7 @@ export function escapeTag(s: string): string {
   return s.replace(/[<>&]/g, escapeChar).replace(/["']/g, "");
 }
 
-const padCache = [
+export const padCache = [
   "",
   " ",
   "  ",
@@ -45,18 +45,46 @@ const padCache = [
   "        ",
   "         ",
   "          ",
+  "           ",
   "            ",
   "             ",
   "              ",
   "               ",
   "                ",
+  "                 ",
+  "                  ",
+  "                   ",
+  "                    ",
+  "                     ",
+  "                      ",
+  "                       ",
+  "                        ",
+  "                         ",
+  "                          ",
+  "                           ",
+  "                            ",
+  "                             ",
+  "                              ",
+  "                               ",
+  "                                ",
+  "                                 ",
+  "                                  ",
+  "                                   ",
+  "                                    ",
 ];
 
+// Even with node 8.1.0 the `var` keyword is still a lot faster
+// than `const` or `let`!
 export function padStart(str: string, n: number) {
-  const pad = padCache[n];
+  var pad = padCache[n];
   if (pad !== undefined) {
     return pad + str;
   }
 
-  return Array(n).join(" ") + str;
+  var out = "";
+  for (var i = 0; i < n; i++) {
+    out += " ";
+  }
+
+  return out + str;
 }

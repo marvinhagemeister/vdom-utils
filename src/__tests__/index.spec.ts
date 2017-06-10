@@ -11,6 +11,6 @@ describe("pad", () => {
   it("should pad string", () => {
     t.equal(padStart("foo", 2), "  foo");
     t.equal(padStart("foo", 0), "foo");
-    t.equal(padStart("foo", 18), "                 foo");
+    t.equal(padStart("foo", 18), "                  foo");
   });
 });
