@@ -1,6 +1,6 @@
 import * as Benchmark from "benchmark";
 import * as chalk from "chalk";
-import { escapeAttr, escapeTag, padStart } from "../src/index";
+import { escapeAttr, escapeTag, padStart, jsToCss } from "../src/index";
 
 /* tslint:disable no-console */
 const logWinner = (suite: any) =>
@@ -37,4 +37,24 @@ async function pad(): Promise<void> {
   });
 }
 
-escape().then(() => pad());
+async function css(): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    new Benchmark.Suite()
+      .add("preact", () => jsToCss("fontSize"))
+      .add("preact", () => jsToCss("color"))
+      .on("cycle", (event: any) => logCycle(event))
+      .on("complete", function(this: any) {
+        logWinner(this);
+        resolve();
+      })
+      .run({ async: true });
+  });
+}
+
+async function run() {
+  await css();
+  await escape();
+  await pad();
+}
+
+run();

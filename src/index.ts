@@ -1,3 +1,6 @@
+/* tslint:disable:no-var-requires */
+const cssProps = require("known-css-properties").all;
+
 export const VOID_ELEMENTS = [
   "area",
   "base",
@@ -88,3 +91,18 @@ export function padStart(str: string, n: number) {
 
   return out + str;
 }
+
+// Taken from `preact-render-to-string` by @developit
+// See https://github.com/developit/preact-render-to-string/blob/master/src/util.js#L27
+export let memoize = (fn: any, mem: any = {}) => (v: any) => {
+  if (mem[v] === undefined) {
+    mem[v] = fn(v);
+  }
+  return mem[v];
+};
+
+// Taken from `preact-render-to-string` by @developit
+// See: https://github.com/developit/preact-render-to-string/blob/master/src/util.js#L65
+export let jsToCss = memoize((s: string) =>
+  s.replace(/([A-Z])/g, "-$1").toLowerCase(),
+);
