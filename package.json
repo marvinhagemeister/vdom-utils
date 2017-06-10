@@ -6,6 +6,10 @@
   "author": "Marvin Hagemeister <marvin@marvinhagemeister.de>",
   "license": "MIT",
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marvinhagemeister/vdom-utils.git"
+  },
   "scripts": {
     "clean": "rimraf dist/",
     "lint": "tslint 'src/**/*.ts'",
@@ -19,10 +23,11 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/benchmark": "^1.0.30",
     "@types/chai": "^4.0.0",
     "@types/mocha": "^2.2.41",
+    "benchmark": "^2.1.4",
     "chai": "^4.0.2",
-    "minibench": "^0.0.1",
     "mocha": "^3.3.0",
     "nyc": "^11.0.2",
     "rimraf": "^2.6.1",

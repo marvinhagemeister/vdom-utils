@@ -1,13 +1,15 @@
-import Benchmark from "minibench";
+import * as Benchmark from "benchmark";
 import { escapeAttr, escapeTag } from "../src/index";
 
-async function bench1() {
-  const bench = await new Benchmark()
-    .add("escapeAttr", () => escapeAttr("a123<7&2\"'>"))
-    .add("escapeTag", () => escapeTag("a123<7&2\"'>"))
-    .run();
+/* tslint:disable no-console */
 
-  bench.print(console.log);
-}
-
-bench1();
+new Benchmark.Suite()
+  .add("escapeAttr", () => escapeAttr("a123<7&2\"'>"))
+  .add("escapeTag", () => escapeTag("a123<7&2\"'>"))
+  .on("cycle", (event: any) => {
+    console.log(String(event.target));
+  })
+  .on("complete", function() {
+    console.log("Fastest is " + this.filter("fastest").map("name"));
+  })
+  .run({ async: true });
