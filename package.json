@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "author": "Marvin Hagemeister <marvin@marvinhagemeister.de>",
   "license": "MIT",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist/",
     "lint": "tslint 'src/**/*.ts'",
