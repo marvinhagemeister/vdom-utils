@@ -1,6 +1,6 @@
 {
   "name": "vdom-utils",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "VirtualDom utility functions",
   "main": "dist/index.js",
   "author": "Marvin Hagemeister <marvin@marvinhagemeister.de>",
