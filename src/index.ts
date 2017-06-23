@@ -1,4 +1,4 @@
-export const VOID_ELEMENTS = [
+export const VOID_ELEMENTS = new Set([
   "area",
   "base",
   "br",
@@ -13,7 +13,7 @@ export const VOID_ELEMENTS = [
   "source",
   "track",
   "wbr",
-];
+]);
 
 const ESC: Record<string, string> = {
   "<": "&lt;",
