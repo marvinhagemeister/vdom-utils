@@ -86,6 +86,8 @@ export function padStart(str: string, n: number) {
     out += " ";
   }
 
+  padCache[n] = out;
+
   return out + str;
 }
 
