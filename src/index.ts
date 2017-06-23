@@ -4,18 +4,18 @@ const ESC: Record<string, string> = {
   "<": "&lt;",
   ">": "&gt;",
   '"': "&quot;",
-  "'": "&quot;",
+  "'": "&#39;",
   "&": "&amp;",
 };
 
 const escapeChar = (a: string) => ESC[a] || a;
 
-export function escapeAttr(s: string): string {
-  return s.replace(/[<>"'&]/g, escapeChar);
-}
+export function escape(s: string | number | boolean): string {
+  if (typeof s === "string") {
+    return s.replace(/[<>"'&]/g, escapeChar);
+  }
 
-export function escapeTag(s: string): string {
-  return s.replace(/[<>&]/g, escapeChar).replace(/["']/g, "");
+  return s.toString();
 }
 
 export const padCache = [
