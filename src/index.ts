@@ -1,6 +1,3 @@
-/* tslint:disable:no-var-requires */
-const cssProps = require("known-css-properties").all;
-
 export const VOID_ELEMENTS = [
   "area",
   "base",

@@ -22,8 +22,7 @@
     "prepublish": "npm run lint && npm t && npm run build"
   },
   "dependencies": {
-    "@types/node": "^7.0.29",
-    "known-css-properties": "^0.2.0"
+    "@types/node": "^7.0.29"
   },
   "devDependencies": {
     "@types/benchmark": "^1.0.30",
