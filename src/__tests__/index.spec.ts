@@ -1,5 +1,5 @@
 import { assert as t } from "chai";
-import { escape, padStart } from "../index";
+import { escape, padStart, jsToCss } from "../index";
 
 describe("escape", () => {
   it("should escape everything", () => {
@@ -16,5 +16,13 @@ describe("pad", () => {
     t.equal(padStart("foo", 2), "  foo");
     t.equal(padStart("foo", 0), "foo");
     t.equal(padStart("foo", 18), "                  foo");
+  });
+});
+
+describe("jsToCss", () => {
+  it("should lowercase and add dashes", () => {
+    t.equal(jsToCss("backgroundColor"), "background-color");
+    t.equal(jsToCss("color"), "color");
+    t.equal(jsToCss("flexDirection"), "flex-direction");
   });
 });
