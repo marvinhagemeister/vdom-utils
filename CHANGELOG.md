@@ -1,5 +1,9 @@
 # Changelog
 
+## next
+
+- 2x faster `escape()`!
+
 ## 0.2.0
 
 - **breaking:** Use `Set` instead of an `Array` for void elements (minor performance enhancemets)
