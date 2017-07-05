@@ -1,6 +1,6 @@
 # Changelog
 
-## next
+## 0.2.1
 
 - 2x faster `escape()`!
 

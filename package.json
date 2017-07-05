@@ -1,6 +1,6 @@
 {
   "name": "vdom-utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "VirtualDom utility functions",
   "main": "dist/index.js",
   "author": "Marvin Hagemeister <marvin@marvinhagemeister.de>",
@@ -41,10 +41,7 @@
     "typescript": "^2.3.1"
   },
   "nyc": {
-    "include": [
-      "src/*.ts",
-      "src/**/*.ts"
-    ],
+    "include": ["src/*.ts", "src/**/*.ts"],
     "exclude": [
       "typings",
       "node_modules/",
@@ -52,19 +49,9 @@
       "__tests__/**",
       "**/*.d.ts"
     ],
-    "extension": [
-      ".ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [
-      "json",
-      "html",
-      "text",
-      "text-summary",
-      "lcovonly"
-    ],
+    "extension": [".ts"],
+    "require": ["ts-node/register"],
+    "reporter": ["json", "html", "text", "text-summary", "lcovonly"],
     "all": true
   }
 }
