@@ -19,7 +19,7 @@
     "test-watch": "npm t -- -w -R min",
     "coverage": "nyc npm t",
     "bench": "ts-node benchmark/index.ts",
-    "prepublish": "npm run lint && npm t && npm run build"
+    "prepublishOnly": "npm run lint && npm t && npm run build"
   },
   "dependencies": {
     "@types/node": "^7.0.29"
