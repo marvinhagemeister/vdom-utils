@@ -1,6 +1,6 @@
 {
   "name": "vdom-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "VirtualDom utility functions",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- Add `es2015` module build for easier tree-shaking
+
 ## 0.3.0
 
 - Add SVG-Elements Set
